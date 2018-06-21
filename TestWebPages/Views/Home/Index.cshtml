@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <p class="lead">Это небольшое приложение для проверки тестового задания. Оно содержит послеодовательность веб-страничек, заполненных url-ами и словами для поиска.</p>
+    <p class="lead">Для поиска следует взять слово <b>null</b>, в качестве стартового url следует использовать @Html.ActionLink( @Url.Action("Test", "Home", new { id = 1 }, this.Request.Url.Scheme), "Test", "Home", new {id = 1}, null )</p>
+</div>

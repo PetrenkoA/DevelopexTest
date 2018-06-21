@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Test";
+}
+@Model TestWebPages.Models.TestModel;
+
+<h2>Страница № @Model.Id</h2>
+
+@if(Model.PageUrls != null)
+{
+    <h3>Ссылки на этой странице:</h3>
+    <ul>
+        @foreach (int elem in Model.PageUrls)
+        {
+            <li>@Html.ActionLink(@Url.Action("Test", "Home", new { id = elem }, this.Request.Url.Scheme), "Test", "Home", new { id = elem }, null)</li>
+        }
+    </ul>
+}
+<br>
+<h3>Слова для поиска на этой странице:</h3>
+@for(int i = 0; i < Model.TestWordCount; i++)
+{
+    <p>@Model.TestWord</p>
+}
